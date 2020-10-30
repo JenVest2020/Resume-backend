@@ -4,11 +4,11 @@ exports.up = function (knex) {
     return knex.schema
         .createTable('employers', tbl => {
             tbl.increments();
-            tbl.string('name&title', 128).notNullable();
+            tbl.string('name_title', 128).notNullable();
             tbl.string('company', 128).notNullable();
             tbl.string('phone_number', 15).notNullable().unique();
             tbl.string('email', 128).notNullable().unique();
-            tbl.string('comm&instructions');
+            tbl.string('comm_instructions');
         })
 
 };
