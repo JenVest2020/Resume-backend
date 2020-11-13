@@ -19,4 +19,15 @@ server.get('/', (req, res) => {
         });
 })
 
+server.post('/', (req, res) => {
+    let employer = req.body;
+    db.add(employer)
+        .then(employerinfo => {
+            res.status(201).json(employerinfo);
+        })
+        .catch(err => {
+            res.status(500).json({ message: 'error posting new employer info', error: err });
+        });
+});
+
 module.exports = server;
