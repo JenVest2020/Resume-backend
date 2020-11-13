@@ -19,7 +19,7 @@ server.get('/', (req, res) => {
         });
 })
 
-server.post('/', (req, res) => {
+server.post('/post', (req, res) => {
     let employer = req.body;
     db.add(employer)
         .then(employerinfo => {
